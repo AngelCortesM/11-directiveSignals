@@ -1,12 +1,13 @@
 <h1>Agregar producto</h1>
 <hr />
-<form action="">
+<form [formGroup]="myForm" action="">
   <div class="row align-items-center mb-3">
     <div class="col-auto">
       <label for="name">Nombre:</label>
     </div>
     <div class="col-auto">
       <input
+        formControlName="name"
         type="text"
         class="form-control"
         id="name"
@@ -15,12 +16,26 @@
       />
     </div>
     <div class="col-auto">
-      <span>Algo de información</span>
+      <!--  [ngStyle]="{ color: color }" -->
+      <span
+        customLabel
+        [color]="color"
+        [errors]="myForm.get('name')?.errors"
+      ></span>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <button class="btn btn-primary">Cambiar color</button>
+      <button (click)="changeColor()" class="btn btn-primary">
+        Cambiar color
+      </button>
     </div>
   </div>
 </form>
+
+<pre class="mt-5">
+  {{ myForm.get("name")?.errors | json }}
+</pre>
+<div [ngStyle]="{ 'background-color': color, 'border-radius': '5px' }">
+  <p>color: {{ color }}</p>
+</div>
