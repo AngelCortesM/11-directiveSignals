@@ -3,10 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { SignalsRoutingModule } from './signals-routing.module';
 import { SignalsLayoutComponent } from './layout/signals-layout/signals-layout.component';
+import { CounterPageComponent } from './counter-page/counter-page.component';
+import { UserInfoPageComponent } from './user-info-page/user-info-page.component';
+import { PropertiesPageComponent } from './properties-page/properties-page.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
-    SignalsLayoutComponent
+    SignalsLayoutComponent,
+    CounterPageComponent,
+    UserInfoPageComponent,
+    PropertiesPageComponent,
+    SideMenuComponent
   ],
   imports: [CommonModule, SignalsRoutingModule],
 })
